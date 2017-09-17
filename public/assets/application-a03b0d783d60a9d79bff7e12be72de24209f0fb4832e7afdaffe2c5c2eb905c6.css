@@ -1,0 +1,161 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+/* line 2, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table {
+  margin: 1em 0;
+  min-width: 300px;
+}
+
+/* line 6, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 10, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table th {
+  display: none;
+}
+
+/* line 13, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table td {
+  display: block;
+}
+
+/* line 16, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table td:first-child {
+  padding-top: .5em;
+}
+
+/* line 19, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table td:last-child {
+  padding-bottom: .5em;
+}
+
+/* line 22, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 6.5em;
+  display: inline-block;
+}
+
+@media (min-width: 480px) {
+  /* line 29, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table td:before {
+    display: none;
+  }
+}
+/* line 33, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table th, .rwd-table td {
+  text-align: left;
+}
+
+@media (min-width: 480px) {
+  /* line 37, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table th, .rwd-table td {
+    display: table-cell;
+    padding: .25em .5em;
+  }
+
+  /* line 41, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table th:first-child, .rwd-table td:first-child {
+    padding-left: 0;
+  }
+
+  /* line 44, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table th:last-child, .rwd-table td:last-child {
+    padding-right: 0;
+  }
+}
+/* line 49, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+body {
+  padding: 0 2em;
+  font-family: Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #444;
+  background: #ddd;
+}
+
+/* line 58, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495E;
+}
+
+/* line 64, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+}
+
+/* line 70, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table a {
+  link: #ADD8E6;
+}
+
+/* line 73, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table tr {
+  border-color: #46637f;
+}
+
+/* line 76, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table th, .rwd-table td {
+  margin: .5em .1em;
+}
+
+@media (min-width: 480px) {
+  /* line 80, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table th {
+    padding: 1em 1.5em !important;
+  }
+
+  /* line 83, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table td {
+    font-family: Raleway, sans-serif;
+    padding: 0.1em 1.5em !important;
+  }
+
+  /* line 87, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table a:link {
+    color: #ADD8E6;
+  }
+
+  /* line 90, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table a:visited {
+    color: #ADD8E6;
+  }
+
+  /* line 93, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table td.positive {
+    color: #90EE90;
+  }
+
+  /* line 95, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+  .rwd-table td.negative {
+    color: #ff6d67;
+  }
+}
+/* line 98, C:/Users/Josh/rails/realtime/app/assets/stylesheets/responsivetable.scss */
+.rwd-table th, .rwd-table td:before {
+  color: #dd5;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

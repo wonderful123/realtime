@@ -1,0 +1,16 @@
+<div class=“market_overview”>
+  <tr>
+    <td><%= market_overview.market_name %></td>
+    <td style="text-align:right"><%= "%1.8f" % market_overview.last %></td>
+    <td style="text-align:right"><%= "%1.3f" % market_overview.base_volume %></td>
+    <td style="text-align:right" class="<%= Market.sign(Market.percentage_difference(market_overview.prev_day, market_overview.last)) %>">
+                                        <%= "%+.2f" % Market.percentage_difference(market_overview.prev_day, market_overview.last) %></td>
+    <td><%= market_overview.market_currency_name %></td>
+    <td><%= link_to 'More details', [market_overview.platform, market_overview] %></td>
+    <td><%= link_to 'Update', [market_overview.platform, market_overview],
+            :method => :put %></td>
+    <td><%= link_to 'Delete', [market_overview.platform, market_overview],
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+ </div>

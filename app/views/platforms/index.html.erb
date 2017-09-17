@@ -1,0 +1,22 @@
+<script type="text/javascript" src="node_modules\node.bittrex.api\node.bittrex.api.js"></script>
+<h1>Platforms</h1>
+
+<%= link_to 'Add new platform', new_platform_path %>
+
+<table>
+  <tr>
+    <th>Platform</th>
+    <th>URL</th>
+  </tr>
+
+  <% @platforms.each do |platform| %>
+    <tr>
+      <td><%= platform.name %></td>
+      <td><%= platform.website %></td>
+      <td><%= link_to 'Show markets', platform_path(platform) %></td>
+      <td><%= link_to 'Delete', platform_path(platform),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+  <% end %>
+</table>

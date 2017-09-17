@@ -1,0 +1,46 @@
+<%= javascript_include_tag "sorttable" %>
+<%= stylesheet_link_tag "responsivetable" %>
+<p>
+  <strong>Market Name:</strong>
+  <%= @market.market_name %>
+</p>
+<p>
+  <strong>High:</strong>
+  <%= @market.high %></br>
+  <strong>Low:</strong>
+  <%= @market.low %></br>
+  <strong>Volume:</strong>
+  <%= @market.volume %></br>
+  <strong>Base Volume:</strong>
+  <%= @market.base_volume %></br>
+  <strong>Previous day:</strong>
+  <%= @market.prev_day %></br>
+  <strong>Open buy orders:</strong>
+  <%= @market.open_buy_orders %></br>
+  <strong>Open sell orders:</strong>
+  <%= @market.open_sell_orders %></br>
+  <hr>
+
+  <p>
+    <strong>Last tickers</strong>
+  </p>
+  <p>
+    <%= link_to 'Update ticker', [@market, Ticker], :method => :create %>
+  </p>
+  <table class="rwd-table">
+    <tr>
+      <th>Time</th>
+      <th>Bid</th>
+      <th>Ask</th>
+      <th>Last</th>
+    </tr>
+    <% @market.tickers.reverse_each do |ticker| %>
+    <tr>
+      <td><%= ticker.created_at %></td>
+      <td><%= "%1.8f" % ticker.bid %></td>
+      <td><%= "%1.8f" % ticker.ask %></td>
+      <td><%= "%1.8f" % ticker.last %></td>
+    </tr>
+    <% end %>
+  </table>
+  <%= link_to 'Back', platform_path(@market.platform) %>

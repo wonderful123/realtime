@@ -1,0 +1,30 @@
+<%= javascript_include_tag "sorttable" %>
+<%= stylesheet_link_tag "responsivetable" %>
+
+<h1>Platform: <a href="http://<%=@platform.website %>"><%= @platform.name %></a></h1>
+<%= button_to 'Update all markets', update_all_markets_platform_path(@platform), :method => 'get' %>
+<hr>
+<table id="market-overview-table" class="sortable rwd-table">
+  <tr>
+    <th>Market</th>
+    <th>Price</th>
+    <th>Volume</th>
+    <th>Change</th>
+    <th>Name</th>
+  </tr>
+  <%= render partial: "market_overview", collection: @platform.markets %>
+</table>
+<hr>
+<h2>Add market</h2>
+<%= link_to 'View available markets', platform_markets_path(@platform) %>
+<%= form_for([@platform, @platform.markets.build]) do |f| %>
+  <p>
+    <%= f.label :market %><br>
+    <%= f.text_field :market_name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', platforms_path %>

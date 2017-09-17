@@ -1,0 +1,27 @@
+<h1>Add new market</h1>
+
+<% if @market.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@market.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <ul>
+      <% @market.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for :market, url: markets_path do |f| %>
+  <p>
+    <%= f.label :market %><br>
+    <%= f.text_field :market_name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', markets_path %>

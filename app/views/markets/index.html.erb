@@ -1,0 +1,25 @@
+<%= javascript_include_tag "sorttable" %>
+<%= stylesheet_link_tag "responsivetable" %>
+
+<h1>Available Markets:</h1>
+
+<table class="sortable rwd-table">
+  <tr>
+    <th>Market</th>
+    <th>Price</th>
+    <th>Volume</th>
+    <th>Change</th>
+    <th>Name</th>
+  </tr>
+  <% @available_markets.each do |market| %>
+    <tr>
+      <td><%= link_to market[:market_name], platform_markets_path(@platform,
+                      :market => {:market_name => market[:market_name]}),
+                      :method => :post %></td>
+      <td style="text-align:right"><%= "%1.8f" % market[:last] %></td>
+      <td style="text-align:right"><%= "%1.3f" % market[:base_volume] %></td>
+      <td style="text-align:right" class="<%= market[:change_sign] %>"><%= "%+.2f" % market[:change] %></td>
+      <td><%= market[:market_currency_name] %></td>
+    </tr>
+    <% end %>
+</table>
